@@ -1,0 +1,34 @@
+<h2>Kategorien</h2>
+
+<div>
+  <label>Name :
+    <input type="string" placeholder="Pasta" #name />
+  </label>
+  <label>Typ :
+    <select #type>
+        <option value="food">Gericht</option>
+        <option value="beverage">Getränk</option>
+        <option value="special">Spezialität</option>
+    </select>
+  </label>
+  <br>
+  <textarea rows="4" cols="50" placeholder="Beschreibung hier eingeben" maxlength="200" #desc ></textarea>
+  <br>
+  <!-- (click) passes input values to add() and then clears the input -->
+  <button (click)="add(name.value, type.value, desc.value); 
+                    name.value=''; 
+                    type.value=''; 
+                    desc.value='';">
+    hinzufügen
+  </button>
+</div>
+
+<!-- list of all categories -->
+<ul class="category-list">
+  <li *ngFor="let category of categories">
+    <a routerLink="/categories/{{category.id}}">
+      <span class="badge">{{category.id}}</span> {{category.name}}
+    </a>
+    <button class="delete" title="entfernen" (click)="delete(category)">x</button>
+  </li>
+</ul>

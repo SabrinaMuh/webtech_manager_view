@@ -1,0 +1,26 @@
+<html>
+    <form #newUserForm="ngForm" (ngSubmit)="onSubmit(newUserForm)">
+        <div class="formItem">
+            <label for="id">ID: </label>
+            <input id="id" ngModel name="id" type="text" placeholder="Enter user id" required>
+        </div>
+        <div class="formItem">
+            <label for="name">Name: </label>
+            <input id="name" ngModel name="name" type="text" placeholder="Enter user name" required>
+        </div>
+        <div class="formItem">
+            <label for="password">Password: </label>
+            <input [type]="showpassword ? 'text' : 'password'" id="password" ngModel name = "password">
+            <input type="checkbox" (click)="showPassword()">Show Password
+        </div>
+        <div class="formItem">
+            <label for="role">Role: </label>
+            <select id="role" (change) = "selected($event)">
+                <option *ngFor="let o of options" [value]="o.name">
+                    {{o.name}}
+                </option>
+            </select>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</html>

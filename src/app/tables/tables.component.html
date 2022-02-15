@@ -1,0 +1,31 @@
+<h2>Tische</h2>
+
+<div>
+  <label>Tischnummer :
+    <input type="number" placeholder="11" #tableNumber />
+  </label>
+  <label>Sitzplätze :
+    <input type="number" placeholder="4" max="20" #capacity />
+  </label>
+  <br>
+  <textarea rows="4" cols="50" placeholder="Beschreibung hier eingeben" maxlength="200" #locDesc ></textarea>
+  <br>
+  <!-- (click) passes input values to add() and then clears the input -->
+  <button (click)="add(+tableNumber.value, +capacity.value, locDesc.value); 
+                    tableNumber.value=''; 
+                    capacity.value=''; 
+                    locDesc.value='';">
+    hinzufügen
+  </button>
+</div>
+
+<!-- list of all tables -->
+<ul class="tables-list">
+  <li *ngFor="let table of tables">
+    <a routerLink="/detail/{{table.id}}">
+      <span class="badge">{{table.id}}</span> {{table.tablenumber}}
+    </a>
+    <button class="delete" title="entfernen" (click)="delete(table)">x</button>
+  </li>
+</ul>
+   

@@ -1,0 +1,64 @@
+<html>
+    <form #newMenuItemForm="ngForm" (ngSubmit)="onSubmit(newMenuItemForm)">
+        <div class="formItem">
+            <label for="id">ID: </label>
+            <input id="id" ngModel name="id" type="text" placeholder="Enter menu item id" required>
+        </div>
+        <div class="formItem">
+            <label for="title">Title: </label>
+            <input id="title" ngModel name="title" type="text" placeholder="Enter menu item title" required>
+        </div>
+        <div class="formItem">
+            <label for="description">Description: </label>
+            <br>
+            <textarea id="description" ngModel name="description" type="text" placeholder="Enter menu item description" required></textarea>
+        </div>
+        <div class="formItem">
+            <label for="price">Price: </label>
+            <input id="price" ngModel name="price" type="number" placeholder="Enter menu item price" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" required>
+        </div>
+        <div class="formItem">
+            <label for="status">Status: </label>
+            <input id="status" ngModel name="status" type="text" placeholder="Enter menu item status" required>
+        </div>
+        <div class="formItem">
+            <label for="allergene">Allergen: </label>
+            <select id="allergene" (change) = "selectedAllergen($event)">
+                <option value=""></option>
+                <option *ngFor="let a of allergene" [value]="a.id">
+                    {{a.title}} - {{a.id}}
+                </option>
+            </select>
+            <br>
+            <label for="listAllergene">Allergene</label>
+            <ul *ngFor="let a of selectedAllergene">
+                <li>{{a}}</li>
+            </ul>
+        </div>
+        <div class="formItem">
+            <button type="button" class="button1" (click)="addAllergentoList()">Add Allergen</button>
+            &nbsp;
+            <button type="button" class="button2" (click)="deleteAllergenFromList()">Delete Allergen</button>
+        </div>
+        <div class="formItem">
+            <label for="categories">Category: </label>
+            <select id="categories" (change) = "selectedCategory($event)">
+                <option value=""></option>
+                <option *ngFor="let o of options" [value]="o.id">
+                    {{o.name}}
+                </option>
+            </select>
+            <br>
+            <label for="listCategories">Categories</label>
+            <ul *ngFor="let c of selectedCategories">
+                <li>{{c.name}}</li>
+            </ul>
+        </div>
+        <div class="formItem">
+            <button type="button" class="button1" (click)="addCategorytoList()">Add Category</button>
+            &nbsp;
+            <button type="button" class="button2" (click)="deleteCategoryFromList()">Delete Category</button>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</html>

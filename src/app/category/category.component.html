@@ -1,0 +1,18 @@
+<html>
+    <form #newCategoryForm="ngForm" (ngSubmit)="onSubmit(newCategoryForm)">
+        <div class="formItem">
+            <label for="id">ID: </label>
+            <input id="id" ngModel name="id" type="text" placeholder="Enter category id" required>
+        </div>
+        <div class="formItem">
+            <label for="title">Name: </label>
+            <input id="title" ngModel name="title" type="text" placeholder="Enter category name" required>
+        </div>
+        <div>
+            <label for="description">Description: </label>
+            <br>
+            <textarea id="description" ngModel name="description" type="text" placeholder="Enter category description" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</html>

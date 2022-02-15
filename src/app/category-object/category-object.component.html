@@ -1,0 +1,7 @@
+<li>
+    ID:&nbsp;{{currentCategory.id}}, Name:&nbsp;{{currentCategory.name}}, Description:&nbsp;{{currentCategory.description}}
+    <br>
+    <a href="" [routerLink]="['/category', currentCategory.id]"><button type="button">Edit</button></a>&nbsp;
+    <button type="button" (click)="deleteCategory()">Delete</button>
+</li>
+<br>

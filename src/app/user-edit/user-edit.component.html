@@ -1,0 +1,24 @@
+<html>
+    <p>ID: {{currentUser.id}}</p>
+    <form #editUserForm="ngForm" (ngSubmit)="onSubmit(editUserForm)">
+        <div class="formItem">
+            <label for="name">Name: </label>
+            <input id="name" ngModel="{{currentUser.name}}" name="name" type="text" placeholder="Enter user name" required>
+        </div>
+        <div class="formItem">
+            <label for="password">Password: </label>
+            <input [type]="showpassword ? 'text' : 'password'" id="password" ngModel name = "password">
+            <input type="checkbox" (click)="showPassword()">Show Password
+        </div>
+        <div class="formItem">
+            <label for="role">Role: </label>
+            <select id="role" name="role" (change) = "selected($event)">
+                <option *ngFor="let o of options" [value]="o.name">
+                    {{o.name}}
+                </option>
+            </select>
+            <p>Current Role: {{currentRole}}</p>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</html>

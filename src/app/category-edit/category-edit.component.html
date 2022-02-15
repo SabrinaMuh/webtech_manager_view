@@ -1,0 +1,15 @@
+<html>
+    <p>ID: {{currentCategory.id}}</p>
+    <form #editCategoryForm="ngForm" (ngSubmit)="onSubmit(editCategoryForm)">
+        <div class="formItem">
+            <label for="title">Name: </label>
+            <input id="title" ngModel="{{currentCategory.name}}" name="title" type="text" value="test" required>
+        </div>
+        <div class="formItem">
+            <label for="description">Description: </label>
+            <br>
+            <textarea id="description" ngModel="{{currentCategory.description}}" name="description" type="text" placeholder="Enter menu item description" required></textarea>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</html>

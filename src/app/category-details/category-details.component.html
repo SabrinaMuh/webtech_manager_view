@@ -1,0 +1,27 @@
+<div *ngIf="category">
+    <h2>Kategorie {{category.id}} Details</h2>
+    <div><span>ID: </span>{{category.id}}</div>
+    <br>
+
+    <div>
+        <label>Name:
+            <input [(ngModel)]="category.name"/>
+        </label>
+        <label>Typ:
+            <select [(ngModel)]="category.type" #type>
+                <option *ngFor="let type of typeArray" 
+                    [value]="type.value" 
+                    [attr.selected]="category.type === type.value ? true : null">
+                    {{type.text}}
+                </option>
+            </select>
+        </label>
+        <br>
+        <textarea [(ngModel)]="category.desc" rows="4" cols="50" placeholder="Beschreibung hier eingeben" maxlength="200"></textarea>
+
+    </div>
+    <br>
+   <button (click)="save()">save</button> 
+   <button (click)="goBack()">zurück</button> 
+  </div>
+

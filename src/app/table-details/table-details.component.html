@@ -1,0 +1,30 @@
+<div *ngIf="table">
+    <h2>Tisch {{table.tablenumber}} Details</h2>
+    <div class="printarea">
+        <div><span>ID: </span>{{table.id}}</div>
+        <div class="print"><span class="print">Tischnummer: </span>{{table.tablenumber}}</div>
+        <div class="print"><span class="print">Sitzplätze: </span>{{table.capacity}}</div>
+    
+        <br>
+
+        <!--TODO: change QR value-->
+        <qr-code class="print" [size]="200" [value]="qrValue"></qr-code>
+       
+    </div>
+    <br>
+    <div>
+        <label>Tischnummer:
+            <input [(ngModel)]="table.tablenumber" type="number" placeholder="11"/>
+        </label>
+        <label>Sitzplätze:
+            <input [(ngModel)]="table.capacity" type="number" placeholder="4" max="20"/>
+        </label>
+        <br>
+        <textarea [(ngModel)]="table.locDesc" rows="4" cols="50" placeholder="Beschreibung hier eingeben" maxlength="200"></textarea>
+
+    </div>
+    <br>
+   <button (click)="save()">save</button> 
+   <button (click)="goBack()">zurück</button> 
+   <button (click)="onPrint()">drucken</button>
+  </div>

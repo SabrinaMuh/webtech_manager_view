@@ -1,0 +1,20 @@
+<p>Menu Item ID: {{id}}</p>
+<div>
+    <label for="allergene">Allergen: </label>
+    <select id="allergene" (change) = "selectedAllergen($event)">
+    <option value=""></option>
+    <option *ngFor="let a of allergene" [value]="a.id">
+        {{a.title}} - {{a.id}}
+    </option>
+    </select>
+    <br>
+    <label for="listAllergene">Allergene</label>
+    <ul *ngFor="let a of selectedAllergene">
+        <li>{{a}}</li>
+    </ul>
+    <br>
+    <br>
+</div>
+<button type="button" (click)="addAllergentoList()">Add Category</button>
+&nbsp;
+<button type="button" (click)="deleteAllergenFromList()">Delete Category</button>

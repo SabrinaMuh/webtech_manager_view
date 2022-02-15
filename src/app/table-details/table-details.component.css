@@ -1,0 +1,36 @@
+textarea{
+    padding: 1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+label{
+    margin-top: 10px;
+    margin-right: 22px;
+}
+
+.printarea {
+    margin-left: 20px;
+}
+
+button {
+    margin-right: 5px;
+}
+
+@media print{
+    :not(.print){
+        visibility: hidden;
+    }
+}
+
+@media print {
+    .print {
+        visibility: visible;
+    }
+
+    .printarea{
+        visibility: visible;
+        border-style: solid;
+        border-width: 1px;
+    }
+}

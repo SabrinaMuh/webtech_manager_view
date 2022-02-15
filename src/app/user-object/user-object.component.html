@@ -1,0 +1,7 @@
+<li>
+    ID:&nbsp;{{currentUser.id}}, Name:&nbsp;{{currentUser.name}}, Password:&nbsp;{{currentUser.password}}, Role:&nbsp;{{currentUser.role}}
+    <br>
+    <a href="" [routerLink]="['/user', currentUser.id]"><button type="button">Edit</button></a>&nbsp;
+    <button type="button" (click)="deleteUser()">Delete</button>
+</li>
+<br>

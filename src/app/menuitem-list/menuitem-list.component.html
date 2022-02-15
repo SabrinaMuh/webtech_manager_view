@@ -1,0 +1,6 @@
+<html>
+    <a href="" routerLink="/menuItem"><button type="button">Add Menu Item</button></a>
+    <ul>
+        <app-menu-item-object *ngFor="let m of menuItems" [currentMenuItem] = "m"></app-menu-item-object>
+    </ul>
+</html>

@@ -1,0 +1,53 @@
+h1 {
+    margin-bottom: 0;
+  }
+  nav a {
+    padding: 1rem;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    background-color: #e8e8e8;
+    color: #3d3d3d;
+    border-radius: 4px;
+  }
+  nav a{
+    float: left;
+  }
+  nav a:first-child{
+    margin-left: 5px;
+  }
+  nav a:hover {
+    color: white;
+    background-color: #42545C;
+  }
+  nav a.active {
+    background-color: black;
+  }
+
+  nav .log_out{
+    float: right;
+    background-color: lightblue;
+    margin-right: 10px;
+  }
+
+  .navigation{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(194, 177, 166);
+  }
+
+  @media print{
+    :not(.print){
+        visibility: hidden;
+    }
+}
+
+@media print {
+    .print {
+        visibility: visible;
+    }
+}

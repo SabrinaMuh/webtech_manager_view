@@ -1,0 +1,12 @@
+<li>Id:&nbsp;{{currentMenuItem.id}}, Title:&nbsp;{{currentMenuItem.title}}, Description:&nbsp;{{currentMenuItem.description}}, Price:&nbsp;{{currentMenuItem.price}}, Likes:&nbsp;{{currentMenuItem.likes}}, Dislikes:&nbsp;{{currentMenuItem.dislikes}}, Status:&nbsp;{{currentMenuItem.status}},
+    <br>
+    Allergene:&nbsp;<a href="" [routerLink]="['/menuItem/allergene' , currentMenuItem.id]"><button type="button">Edit Allergene</button></a>
+    <ul><li *ngFor="let a of currentMenuItem.allergene">{{a}}</li></ul>
+    Categories:&nbsp;<a href="" [routerLink]="['/menuItem/categories' , currentMenuItem.id]"><button type="button">Edit Categories</button></a>
+    <ul><li *ngFor="let c of currentMenuItem.categories">{{c}}</li></ul>
+    <a href="" [routerLink]="['/menuItem' , currentMenuItem.id]"><button type="button">Edit Menu Item</button></a>&nbsp;
+    <button type="button" (click)="deleteMenuItem()">Delete</button>&nbsp;
+    <button type="button" (click)="likeMenuItem()">Like</button>&nbsp;
+    <button type="button" (click)="dislikeMenuItem()">Disike</button>&nbsp;
+</li>
+<br>

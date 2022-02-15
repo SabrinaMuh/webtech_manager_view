@@ -1,0 +1,6 @@
+<html>
+    <a href="" routerLink="/user"><button type="button">Add User</button></a>
+    <ul>
+        <app-user-object *ngFor="let u of users" [currentUser] = "u"></app-user-object>
+    </ul>
+</html>

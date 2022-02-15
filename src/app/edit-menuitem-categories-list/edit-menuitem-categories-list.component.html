@@ -1,0 +1,17 @@
+<p>Menu Item ID: {{id}}</p>
+<label for="categories">Category: </label>
+<select id="categories" (change) = "selectedCategory($event)">
+    <option value=""></option>
+    <option *ngFor="let o of options" [value]="o.id">
+        {{o.name}}
+    </option>
+</select>
+<br>
+<label for="listCategories">Categories</label>
+<ul *ngFor="let c of selectedCategories">
+    <li>{{c.name}}</li>
+</ul>
+<br>
+<button type="button" (click)="addCategorytoList()">Add Category</button>
+&nbsp;
+<button type="button" (click)="deleteCategoryFromList()">Delete Category</button>

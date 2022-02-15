@@ -1,0 +1,6 @@
+<html>
+    <a href="" routerLink="/category"><button type="button">Add Category</button></a>
+    <ul>
+        <app-category-object *ngFor="let c of categories" [currentCategory] = "c"></app-category-object>
+    </ul>
+</html>
